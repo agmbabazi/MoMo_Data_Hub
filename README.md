@@ -28,7 +28,7 @@ We are using a Scrum board to organize tasks into **To Do → In Progress → Do
 ##  Team Members
 
 - **Members**:  
-  -  Acele Happy Dukunde Irakoze
-  -  Eugene Koech 
-  -  Naillah Ineza
-  -  Agnes Mbabazi
+  -  Acele Happy Dukunde Irakoze - Managed Scrum board & task allocation
+  -  Eugene Koech - Designed architecture diagram
+  -  Naillah Ineza - Added initial project files
+  -  Agnes Mbabazi - Created repository, GitHub setup
