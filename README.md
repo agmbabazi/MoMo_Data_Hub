@@ -22,13 +22,13 @@ The system follows a modular **ETL + Database + Frontend** architecture:
 ##  Scrum Board
 We are using a Scrum board to organize tasks into **To Do → In Progress → Done**.  
 
-👉 Access the Scrum board here: [Scrum Board Link]
+👉 Access the Scrum board here: [https://sharing.clickup.com/90121200447/b/h/2kxu8rtz-112/7e78ab8c5574bac]
 
 
 ##  Team Members
 
 - **Members**:  
-  -  Acele Happy Irakoze
+  -  Acele Happy Dukunde Irakoze
   -  Eugene Koech 
   -  Naillah Ineza
   -  Agnes Mbabazi
