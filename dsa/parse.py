@@ -19,13 +19,45 @@ class TransactionMessages:
         self.__all_messages = messages
         return self.__all_messages
 
-    def get_momo_income(self, messages) -> list[str]:
+    def get_received(self, messages) -> list[str]:
         """This function gets all income messages from Momo to Momo"""
         if not self.check_messages(messages):
             return []
         return [
             message for message in self.__all_messages
             if message.startswith("You have received")
+        ]
+
+    def get_momo_payment(self, messages) -> list[str]:
+            if not self.check_messages(messages):
+            return []
+        return [
+            message for message in self.__all_messages
+            if re.search(r"your payment of", message, re.I)
+        ]
+
+    def get_bank_deposit(self, messages) -> list[str]:
+            if not self.check_messages(messages):
+            return []
+        return [
+            message for message in self.__all_messages
+            if message.startswith("*113*R*A bank deposit of")
+        ]
+
+    def get_withdraw(self, messages) -> list[str]:
+            if not self.check_messages(messages):
+            return []
+        return [
+            message for message in self.__all_messages
+            if re.search("withdrawn", message, re.I)
+        ]
+
+    def get_transfer(self, messages) -> list[str]:
+            if not self.check_messages(messages):
+            return []
+        return [
+            message for message in self.__all_messages
+            if re.search(r"transferred to", message, re.I)
         ]
 
 if __name__ == "__main__":
