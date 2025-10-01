@@ -1,4 +1,6 @@
 import xml.etree.ElementTree as ET
+import re
+import json
 from typing import Any
 
 def get_messages(data):
@@ -29,7 +31,9 @@ class TransactionMessages:
         ]
 
     def get_momo_payment(self, messages) -> list[str]:
-            if not self.check_messages(messages):
+        """This function gets all momo payment messages"""
+        import re
+        if not self.check_messages(messages):
             return []
         return [
             message for message in self.__all_messages
@@ -37,7 +41,8 @@ class TransactionMessages:
         ]
 
     def get_bank_deposit(self, messages) -> list[str]:
-            if not self.check_messages(messages):
+        """This function gets all bank deposit messages"""
+        if not self.check_messages(messages):
             return []
         return [
             message for message in self.__all_messages
@@ -45,7 +50,9 @@ class TransactionMessages:
         ]
 
     def get_withdraw(self, messages) -> list[str]:
-            if not self.check_messages(messages):
+        """This function gets all withdraw messages"""
+        import re
+        if not self.check_messages(messages):
             return []
         return [
             message for message in self.__all_messages
@@ -53,7 +60,9 @@ class TransactionMessages:
         ]
 
     def get_transfer(self, messages) -> list[str]:
-            if not self.check_messages(messages):
+        """This function gets all transfer messages"""
+        import re
+        if not self.check_messages(messages):
             return []
         return [
             message for message in self.__all_messages
@@ -61,9 +70,9 @@ class TransactionMessages:
         ]
 
 if __name__ == "__main__":
-    momo_data = ET.parse(r"E:\MoMo_Data_Hub\data\modified_sms_v2.xml")
+    momo_data = ET.parse("data/modified_sms_v2.xml")
     all_messages = get_messages(data=momo_data.getroot())
     user_transaction = TransactionMessages(messages=all_messages)
 
-    for pay in user_transaction.get_momo_income(messages=all_messages):
+    for pay in user_transaction.get_transfer(messages=all_messages):
         print(f"{pay}\n")
