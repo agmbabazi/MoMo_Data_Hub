@@ -125,6 +125,12 @@ def parse_sms(xml_file, json_file):
 
         transactions.append(record)
 
+# Sort transactions by date
+    transactions.sort(key=lambda x: x["date"])
+    # Assign sequential IDs
+    for idx, record in enumerate(transactions, start=1):
+        record["id"] = str(idx)
+        
     # Save to JSON
     with open(json_file, "w") as f:
         json.dump(transactions, f, indent=2)
